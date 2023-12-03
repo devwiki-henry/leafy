@@ -47,7 +47,7 @@ public class PlantController {
      * @return 추가된 식물
      */
     @PostMapping("")
-    public ResponseEntity<PlantDetailDto> addPlant(@Valid @RequestBody PlantDetailDto plantDetailDto) {
+    public ResponseEntity<PlantDetailDto> addPlant(@RequestBody PlantDetailDto plantDetailDto) {
         PlantDetailDto addedPlantDetailDto = plantService.addPlant(plantDetailDto);
         return new ResponseEntity<>(addedPlantDetailDto, HttpStatus.CREATED);
     }
