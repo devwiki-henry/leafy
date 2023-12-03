@@ -1,4 +1,4 @@
-name: Docker Build and Push
+name: Frontend Build and Push
 
 on:
   push:
