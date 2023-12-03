@@ -6,8 +6,8 @@ on:
       - 08-cicd  
       # 08-cicd 브랜치에 push될 때 워크플로우가 실행됩니다.
     paths:
-      - 'leafy-backend/**'  
-      # leafy-backend 폴더 내의 모든 변경사항에 반응합니다.
+      - 'leafy-frontend/**'  
+      # leafy-frontend 폴더 내의 모든 변경사항에 반응합니다.
 
 jobs:
   build-and-push:
@@ -33,10 +33,10 @@ jobs:
     - name: Build and Push
       uses: docker/build-push-action@v2
       with:
-        context: ./leafy-backend  
+        context: ./leafy-frontend  
         # Dockerfile이 있는 위치입니다.
-        file: ./leafy-backend/Dockerfile  
+        file: ./leafy-frontend/Dockerfile  
         # Dockerfile의 경로입니다.
         push: true  # 이미지를 레지스트리에 푸시합니다.
-        tags: easydocker123/leafy-backend:${{ github.sha }}  
+        tags: easydocker123/leafy-frontend:${{ github.sha }}  
 
